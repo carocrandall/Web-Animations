@@ -1,0 +1,166 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.0.0/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
+  <!--<script language="javascript" src="libraries/p5.sound.js"></script>-->
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+</head>
+<script>
+var mySquare = new Array(10);
+var mySquare2 = new Array (20);
+var mySquare3 = new Array (20);
+var mySquare4 = new Array (20);
+var mySquare5 = new Array (20);
+var mySquare6 = new Array (20);
+var mySquare7 = new Array (20);
+var mySquare8 = new Array (20);
+var mySquare9 = new Array (20);
+var mySquare10 = new Array (20);
+var mySquare11 = new Array (20);
+
+
+
+
+
+//colorsquare[] mySquare = new colorsquare[10];
+
+function setup(){
+  createCanvas(1440,400);
+  smooth();
+  for (i =0; i<mySquare.length; i++) {
+    mySquare[i] = new colorsquare(random(0,255), random(0,5), random(0,10), random(0,2), 0, 30);
+  }
+
+  for (i =0; i<mySquare2.length; i++) {
+    mySquare2[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 100, 75);
+  }
+  for (i =0; i<mySquare3.length; i++) {
+    mySquare3[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 200, 25);
+  }
+  for (i =0; i<mySquare4.length; i++) {
+    mySquare4[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 300, 50 );
+  }
+  for (i =0; i<mySquare5.length; i++) {
+    mySquare5[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 400, 25);
+  }
+  for (i =0; i<mySquare6.length; i++) {
+    mySquare6[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 500, 100);
+  }
+  for (i =0; i<mySquare7.length; i++) {
+    mySquare7[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 600, 50);
+  }
+  for (i =0; i<mySquare8.length; i++) {
+    mySquare8[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 800, 25);
+  }
+  for (i =0; i<mySquare9.length; i++) {
+    mySquare9[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 1000, 150);
+  }
+  for (i =0; i<mySquare10.length; i++) {
+    mySquare10[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 1300, 25);
+  }
+  for (i =0; i<mySquare11.length; i++) {
+    mySquare11[i] = new colorsquare(random(0,155),random(0,10),random(0,5),random(0,2), 900, 25);
+  }
+}
+
+function draw(){
+  background(0);
+  for (i=0; i< mySquare.length; i++){
+    mySquare[i].update();
+    mySquare[i].move();
+    mySquare[i].drawsquare();
+  }
+
+  for (i=0; i< mySquare2.length; i++){
+    mySquare2[i].update();
+    mySquare2[i].move();
+    mySquare2[i].drawsquare();
+  }
+  for (i=0; i< mySquare3.length; i++){
+    mySquare3[i].update();
+    mySquare3[i].move();
+    mySquare3[i].drawsquare();
+  }
+  for (i=0; i< mySquare4.length; i++){
+    mySquare4[i].update();
+    mySquare4[i].move();
+    mySquare4[i].drawsquare();
+  }
+  for (i=0; i< mySquare5.length; i++){
+    mySquare5[i].update();
+    mySquare5[i].move();
+    mySquare5[i].drawsquare();
+  }
+  for (i=0; i< mySquare6.length; i++){
+    mySquare6[i].update();
+    mySquare6[i].move();
+    mySquare6[i].drawsquare();
+  }
+  for (i=0; i< mySquare7.length; i++){
+    mySquare7[i].update();
+    mySquare7[i].move();
+    mySquare7[i].drawsquare();
+  }
+  for (i=0; i< mySquare8.length; i++){
+    mySquare8[i].update();
+    mySquare8[i].move();
+    mySquare8[i].drawsquare();
+  }
+  for (i=0; i< mySquare9.length; i++){
+    mySquare9[i].update();
+    mySquare9[i].move();
+    mySquare9[i].drawsquare();
+  }
+  for (i=0; i< mySquare10.length; i++){
+    mySquare10[i].update();
+    mySquare10[i].move();
+    mySquare10[i].drawsquare();
+  }
+  for (i=0; i< mySquare11.length; i++){
+    mySquare11[i].update();
+    mySquare11[i].move();
+    mySquare11[i].drawsquare();
+  }
+}
+
+
+
+function colorsquare(tempstartcolor, tempchangecolor, tempypos, tempyspeed, tempxpos, tempwidth) {
+
+  this.startcolor= tempstartcolor;
+  this.changecolor= tempchangecolor;
+  this.ypos= tempypos;
+  this.yspeed= tempyspeed;
+  this.xpos = tempxpos;
+  this.width = tempwidth;
+
+  this.update = function(){
+    this.startcolor = this.startcolor - this.changecolor;
+    if ( this.startcolor <= 0 || this.startcolor >= 255) {
+      this.changecolor = -this.changecolor;
+    }
+
+  }
+
+  this.move = function() {
+    this.ypos += this.yspeed;
+    if(this.ypos <= 0 || this.ypos >= height) {
+      this.yspeed = -this.yspeed;
+    }
+  }
+
+  this.drawsquare = function() {
+    fill(this.startcolor);
+    rect(this.xpos,this.ypos,this.width,25);
+  }
+}
+
+
+</script>
+<body>
+</body>
+</html>
